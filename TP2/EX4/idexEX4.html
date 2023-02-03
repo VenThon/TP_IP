@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex4 TP02</title>
+    <link rel="stylesheet" href="./idex.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="video-outer"> -->
+            <!-- <canvas id="canvas" style="height: 400px; width: 400px; border: 2px solid black;">
+            </canvas> -->
+            <div class="video-outer" style="height: 300px; width: 400px; border: 2px solid black; background-color: white;">
+                <video id="video" height="300px" width="400px" autoplay></video>
+            </div>
+        <!-- </div> -->
+        <!-- <div class="video-outer">
+            <video id="video" height="100%" width="100%" autoplay></video>
+        </div> -->
+        <div class="opencamera">
+            <p>Canvas  <i class="bi bi-camera-reels"></i> : Please show your face on me</p>
+            <a href="#!" id="btn" class="btn-start" onclick="start()">Start</a>
+            <a href="#!" id="btn" class="btn-stop" onclick="StopWebCam()">Stop</a>
+        </div>
+    </div>
+    <script src="./action.js"></script>
+    
+</body>
+</html>

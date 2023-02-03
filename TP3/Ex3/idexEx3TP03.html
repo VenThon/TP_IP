@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex3 Cookie</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-amber-700 flex justify-center items-center w-full h-[100vh]">
+    <div class="bg-[#ffffff] w-[600px] h-[650px] border-solid">
+        <div class="justify-center items-center flex  h-[100px]">
+            <h3>Cookie Management</h3>
+        </div>
+        <div class="bg-indigo-300 w-[600px]  flex">
+            <div class="p-2">
+                <h4>Key</h4>
+                <input type="text" placeholder="Key" id="Key" class="h-10 w-full border-black border-2 rounded-xl">
+            </div>
+            <div class="p-2">
+                <h4>Value</h4>
+                <input type="text" placeholder="value" id="Value" class="h-10 w-full border-black border-2 rounded-xl">
+            </div>
+            <div class="p-2">
+                <h4>Expired</h4>
+                <input type="date" id="Expired" class="h-10 w-full border-black border-2 rounded-xl">
+            </div>
+            <div class="p-2">
+                <input type="button" id="add-btn" class="h-10 w-16 bg-blue-700 rounded-xl text-cyan-50 mt-6" value="Add">
+            </div>
+        </div>
+        <div id="list-wrapper"></div>
+    </div> 
+    <script src="./action.js"></script>
+</body>
+</html>

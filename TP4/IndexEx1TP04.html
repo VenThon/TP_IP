@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab</title>
+    <style>
+        body{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .container{
+            width: 80%;
+            background-color: azure;
+            border: 2px solid black;
+            padding: 15px;
+        }
+        h2, p{
+            display: flex;
+            justify-content: center;
+        }
+        img{
+            width: 100%;
+        }
+        .btn{
+            width: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            height: 35px;
+        }
+        button{
+            width: 33.33%;
+            height: 100%;
+        }
+        .content{
+            width: 95%;
+            background-color: white;
+            padding: 15px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>About</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores rem accusamus.</p>
+        </div>
+        <div>
+            <img src="./flower.png" alt="">
+        </div>
+        <div class="btn">
+            <button id="history" type="button">History</button>
+            <button id="vision" type="button">Vision</button>
+            <button id="goals" type="button">Goals</button>
+        </div>
+        <div class="content" id="demo">
+            
+        </div>
+    </div>
+    <script>
+        var History = document.getElementById("history")
+        var Vision = document.getElementById("vision")
+        var Goals = document.getElementById("goals")
+        var Demo = document.getElementById("demo")
+        function myhistory(){
+            History.style.backgroundColor="blue"
+            Vision.style.background="white"
+            Goals.style.background="white"
+            Demo.innerHTML =`
+            <div>
+                <strong>History</strong>
+                <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                printer took a galley of type and scrambled it to make a type specimen book. It has survived not 
+                only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum hostory.
+                </p>
+            </div>
+            `
+        }
+        myhistory();
+        History.addEventListener("click" , () => {
+            myhistory();
+        });
+
+        function myvision(){
+            History.style.backgroundColor="white"
+            Vision.style.background="blue"
+            Goals.style.background="white"
+            Demo.innerHTML =`
+            <div>
+                <strong>Vision</strong>
+                <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                printer took a galley of type and scrambled it to make a type specimen book. It has survived not 
+                only five centuries, but also the leap into electronic typesetting, remaining essentially unchang
+                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum vision.
+                </p>
+            </div>
+            `
+        }
+         myvision();
+         Vision.addEventListener("click", () =>{
+            myvision();
+        });
+
+        function mygoals(){
+            History.style.backgroundColor="white"
+            Vision.style.background="white"
+            Goals.style.background="blue"
+            Demo.innerHTML =`
+            <div>
+                <strong>Goals</strong>
+                <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                printer took a galley of type and scrambled it to make a type specimen book. It has survived not 
+                only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum goals.
+                </p>
+            </div>
+            `
+        }
+         mygoals();
+         Goals.addEventListener("click", () =>{
+            mygoals();
+        });
+    </script>
+</body>
+</html>

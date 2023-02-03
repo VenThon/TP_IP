@@ -1,0 +1,109 @@
+   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&family=Roboto:wght@100;500&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Roboto', sans-serif;
+        }
+        .wrapper{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto;
+            margin-top: 50px;
+            text-align: center;
+            border: 1px solid black;
+            width: fit-content;
+            height: 600px;
+            width: 600px;
+            background-color: aliceblue;
+        }
+        .wrapper h1{
+            font-size: 40px;
+            color: #241e4a;
+        }
+        #counter{
+            margin: 30px;
+            font-size: 80px;
+            color: #158704;
+        }
+        button{
+            border: 1px solid black;
+            border-radius: 3px;
+            height: 25px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin: 5px;
+            background-color: aliceblue;
+        }
+        #increase{
+            background-color: black;
+            color: white;
+}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div>
+            <h1>Counter</h1>
+            <div id="counter"></div>
+            <button type="button" id="decrease">DECREASE</button>
+            <button type="button" id="reset">RESET</button>
+            <button type="button" id="increase">INCREASE</button>
+        </div>
+    </div>
+    <script>
+        class Counter{
+        number = 0;
+        constructor(){
+            document.getElementById("counter").innerHTML = localStorage.getItem("counter");
+        }
+        decrease(){
+            this.number -= 1;
+            return this.number;
+        }
+    
+        increase(){
+            this.number += 1;
+            return this.number;
+        }
+    
+        reset(){
+            this.number = 0;
+            return this.number;
+        }
+    }
+    
+    var counter = new Counter();
+    
+    function increase(){
+        localStorage.setItem("counter",counter.increase());
+        document.getElementById("counter").innerHTML = localStorage.getItem("counter");
+    }
+    function decrease(){
+        localStorage.setItem("counter",counter.decrease());
+        document.getElementById("counter").innerHTML = localStorage.getItem("counter");
+    }
+    function reset(){
+        localStorage.setItem("counter",counter.reset());
+        document.getElementById("counter").innerHTML = localStorage.getItem("counter");
+    }
+    document.getElementById("decrease").addEventListener("click", decrease)
+    document.getElementById("reset").addEventListener("click", reset)
+    document.getElementById("increase").addEventListener("click", increase)
+    
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex12</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #container{
+            width: 50%;
+            aspect-ratio: 2/1;
+            border: .3vw solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .sub-container{
+            width: 90%;
+            aspect-ratio: 2/1;
+            display: flex;
+            justify-content: space-between;
+            gap: 3vw;
+            align-items: center;
+        }
+        .sub-container>div{
+            width: 100%;
+            height: 100%;
+        }
+        .Let-I{
+            background-color: #db8181;
+        }
+        .Let-T{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .Let-T>div{
+            background-color: #84cb79;
+        }
+        .Let-T-Head{
+            width: 100%;
+            height: 20%;
+        }
+        .Let-T-Body{
+            width: 25%;
+            height: 87%;
+        }
+        .Let-C{
+            height: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+        .Let-C>div{
+            width: 100%;
+            background-color: #fdc841;
+        }
+        .Let-C-Head, .Let-C-Leg{
+            width: 100% !important;
+            height: 25%;
+        }
+        .Let-C-Body{
+            width: 35% !important;
+            height: 100%;
+        }
+        .Let-I{
+            flex: .5;
+        }
+        .Let-T{
+            flex: 2;
+        }
+        .Let-C{
+            flex: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="sub-container">
+            <div class="Let-I">
+
+            </div>
+            <div class="Let-T">
+                <div class="Let-T-Head"></div>
+                <div class="Let-T-Body"></div>
+            </div>
+            <div class="Let-C">
+                <div class="Let-C-Head"></div>
+                <div class="Let-C-Body"></div>
+                <div class="Let-C-Leg"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

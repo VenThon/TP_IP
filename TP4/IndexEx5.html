@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            width: 100%;
+            height: 80px;
+            display: flex;
+            justify-content: space-around;
+            position: relative;
+            align-items: center;
+            z-index: 5;
+            background-color: rgb(252, 240, 174);
+        }
+        .logo h2{
+            font-size: 2rem;
+            color: black;
+        }
+        .logo h2 span{
+            color: rgb(33, 158, 216);
+        }
+        .nav_list ul{
+            display: flex;
+        }
+        .nav_list ul li{
+            margin-left: 40px;
+            list-style-type: none;
+        }
+        .nav_list ul li a{
+            text-decoration: none;
+            font-size: 1.4rem;
+            color: black;
+        
+        }
+        .nav_list ul li a:hover{
+            border-bottom: 2px solid black;  
+        }
+        .nav_icon{
+            margin-left: 130px;
+        }
+        .nav_icon ul{
+            display: flex;
+        }
+        .nav_icon ul li{
+            margin-left: 15px;
+            list-style-type: none;
+        }
+        .nav_icon ul li a{
+            text-decoration: none;
+            font-size: 20px;
+
+        }
+        .btn button{  
+            font-size: 40px;    
+            display: none;
+            background-color: rgb(252, 240, 174);
+            border: none;
+            color: blue;
+            cursor: pointer;
+        }
+        .top{
+            animation-name: rotateTop;
+            animation-duration: 1s;
+            display: none;
+        }
+        .hide_list{
+            display: none;
+            animation-name: rotateBar;
+            animation-duration: 1s;
+            
+        }
+
+        .hide_list ul li{
+            list-style-type: none;
+            width: 100%;
+            padding-left: 20px;
+            background-color: rgb(252, 240, 174);
+        }
+        .hide_list ul li a:hover{
+            color: red;
+            
+        }
+        .hide_list ul li:hover{
+            background-color: rgb(255, 248, 149);
+
+        }
+        .hide_list ul li a{
+            text-decoration: none;
+            font-size: 1.7rem;
+            color: rgb(0, 0, 0);
+
+        }
+        @keyframes rotateBar {
+            from{
+                transform: translateY(-120px);
+                z-index: -2;
+
+            }
+            to{
+                transform: translateY(0px);
+            }
+        }
+
+        @media screen and (max-width: 678px){
+            .nav_icon{
+                display: none;
+            }
+            .nav_list{
+                display: none;
+            }
+            .btn button{
+                display: flex;
+            }
+            .container{
+                display: flex;
+                justify-content: space-between;
+                padding: 0px 20px;
+            }
+        }
+        #my_btn_hide{
+            position: absolute;
+            right: 20px;
+            font-size: 30px;
+            border: none;
+            color: blue;
+            margin-top: -63px;
+            z-index: 8;
+            background-color: rgb(252, 240, 174);
+            font-size: 40px;
+
+        }
+        @media screen and (min-width: 700px){
+            .hide_list{
+                display: none;
+            }
+
+        }
+        @keyframes rotateTop {
+            from{
+                transform: translateY(0px);
+                z-index: -2;
+
+            }
+            to{
+                transform: translateY(-120px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h2>NAV<span>-BAR</span></h2>
+        </div>
+          <div class="btn">
+            <button id="nav_btn"><i class="bi bi-list"></i>
+            </button>       
+        </div>
+        <div class="nav_list">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#project">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav_icon">
+            <ul>
+                <li><a href="#facebook"><i class="bi bi-facebook"></i>
+                </a></li>
+                <li><a href="#twitter"><i class="bi bi-twitter"></i>
+                </a></li>
+                <li><a href="#instagram"><i class="bi bi-instagram"></i>
+                </a></li>
+                <li><a href="#behance"><i class="bi bi-behance"></i>
+                </a></li>
+                <li><a href="#gem"><i class="bi bi-gem"></i>
+                </a></li>
+            </ul>
+        </div>
+    </div>
+    <div >
+        <div class="hide_list top">
+            <ul >
+                <li><a href="#home">Home</a> <button id="my_btn_hide"><i class="bi bi-list"></i>
+                </button></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#project">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        const btn = document.getElementById('nav_btn');
+        const show = document.querySelector('.hide_list');
+        const toTOp = document.getElementById('my_btn_hide');
+        const showTop = document.querySelector('.top');
+
+        btn.addEventListener("click", function(){
+            show.style.display= "block";
+        });
+
+        toTOp.addEventListener("click", function(){
+
+            showTop.style.display = "none";
+
+        })
+
+    </script>
+</body>
+</html>

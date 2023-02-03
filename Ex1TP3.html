@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex1 List LocalStorage</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: gray;
+        }
+        .row {
+        width: 100%;
+        background-color:red ;
+        display: flex;
+        padding: 2;
+      }
+      .column {
+        background-color: rgb(150, 150, 255);
+        width: 100%;
+        padding: 2;
+      }
+       
+      .btn-wrapper{
+        display: flex;
+        align-items: flex-end;
+      }
+    </style>
+</head>
+<body>
+    <div style="width: 600px; border: 2px solid black; background-color: white;">
+        <div style="display: flex; justify-content: center;">
+            <h3>To do list with localStorag</h3>
+        </div>
+        <div class="row" style="background-color: lightslategray; border: 1px solid ; border-radius: 8px; width: 570px; height: 83px; margin-left: 9px; display: flex; justify-content: space-between; padding: 5px;">
+            <div class="column">
+                <p>Task title</p>
+                <div >
+                    <input type="text" placeholder="title" id="inputTitle">
+                </div>
+            </div>
+            <div class="column">
+                <p>Assignee</p>
+                <div>
+                  <input type="text" id="inputName" placeholder="title">
+                </div>
+            </div>
+            <div class="column">
+                <p>Deteline</p>
+                <div class="chooseCaleder">
+                    <input type="date" id="choose">
+                </div>
+            </div>
+            <div class="column btn-wrapper">
+                <button id="add-btn">Add</button>
+            </div>
+        </div>
+        <div id="list-wrapper"></div> 
+    </div>
+
+    <script>
+        let inputTitle=document.getElementById("inputTitle");
+        let inputName=document.getElementById("inputName");
+        let choose=document.getElementById("choose");
+        let listWrapperEle = document.getElementById("list-wrapper");
+        let addBtnEle = document.getElementById("add-btn");
+     
+        let taskArr = [
+        function AddData() {
+        var formData = {};
+        formData["inputTitle"] = document.getElementById("inputTitle").value;
+        formData["inputName"] = document.getElementById("inputName").value;
+        formData["choose"] = document.getElementById("choose").value;
+        // return formData;
+        function data( inputTitle,inputName,choose){
+          inputTitle.value = "";
+          inputName.value = "";
+          choose.value = "";
+        }
+          renderList();
+        }
+        //   { name: "Define requirement", assignee: "makara", date: "2/34/22" },
+        //   { name: "Define requirement", assignee: "kompheak", date: "2/34/22" },
+        //   { name: "Define requirement", assignee: "minea", date: "2/34/22" },
+        ];
+     
+        addBtnEle.addEventListener("click", () => {
+          taskArr.push(AddData)
+          renderList();
+        })
+        function renderList() {
+      let listContent = "";
+      taskArr.forEach(taskArr => {
+        listContent += `
+        <div class="row">
+          <div class="column">${taskArr.inputTitle}</div>
+          <div class="column">${taskArr.inputName}</div>
+          <div class="column">${taskArr.choose}</div>
+        </div>
+      `;
+      });
+      listWrapperEle.innerHTML = listContent;
+    }
+ 
+    renderList();
+  </script>
+</body>
+</html>

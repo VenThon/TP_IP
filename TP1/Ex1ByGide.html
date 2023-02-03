@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex By Gide</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .gridebox{
+            display: grid;
+            grid-template-columns: 10rem 10rem 10rem 10rem;
+            grid-template-rows: 10rem 10rem 10rem;
+            justify-content: center;
+            text-align: center;
+            margin-top: 10rem;
+        }
+        .gridebox .box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 15px;
+            border: 2px solid black;
+        }
+        .gridebox .box1{
+            background-color: aqua;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            justify-content: center;
+        }
+        .gridebox .box2{
+            background-color: bisque;
+            grid-column-start: 2;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 2;
+        }
+        .gridebox .box3{
+            background-color:gray;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 2;
+            grid-row-end: 3;
+        }
+        .gridebox .box4{
+            background-color: blueviolet;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            grid-row-start: 3;
+            grid-row-end: 4;
+        }
+        .gridebox .box5{
+            background-color: brown;
+            grid-column-start: 2;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+        .gridebox .box6{
+            background-color: blue;
+            grid-column-start: 3;
+            grid-column-end: 4;
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+        .gridebox .box7{
+            background-color:rebeccapurple;
+            grid-column-start: 4;
+            grid-column-end: 5;
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+    </style>
+</head>
+<body>
+    <div class="gridebox">
+        <div class="box box1">box1</div>
+        <div class="box box2">box2</div>
+        <div class="box box3">box3</div>
+        <div class="box box4">box4</div>
+        <div class="box box5">box5</div>
+        <div class="box box6">box6</div>
+        <div class="box box7">box7</div>
+    </div>
+</body>
+</html>
