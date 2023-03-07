@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nationality</title>
+    <style>
+        .wrapper{
+            width: 600px;
+            height: 600px;
+            border: 2px solid black;
+            background-color: aqua;
+        }
+        .emogy{
+            display: flex;
+            justify-content: center;
+            font-size: 70px;
+        }
+        h1{
+            display: flex;
+            justify-content: center;
+        }
+        .sub-wrapper{
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+        input{
+            height: 30px;
+            background-color: whitesmoke;
+            border-radius: 4px;
+        }
+        button{
+            height: 35px;
+        }
+        .content{
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .sub-content{
+            display: flex;
+            justify-content: space-between;
+            color:black;
+            width: 300px;
+            background-color: gray;
+            padding: 30px 10px 5px 10px;
+            border: 1px solid black;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="emogy">
+            🌍
+        </div>
+        <h1>I know you Home</h1>
+       <div class="sub-wrapper">
+            <div class="input">
+                <input type="text" placeholder="Tell me your first name" id="input" >
+            </div>
+            <div class="btn">
+                <button onclick="GetData()">Guess</button>
+            </div>
+            <div id="loading-text" hidden>
+                loading.....
+            </div>
+       </div>
+       <div id="wrapper">
+            
+        </div>
+    </div>
+    <script>
+        const loadingText = document.getElementById("loading-text");
+        const finput = document.getElementById("input");
+        const wrapperELe = document.getElementById('wrapper');
+
+        function GetData(){
+            const finput = document.getElementById("input");
+           loadingText.hidden=false;
+           fetch(`https://api.nationalize.io?name=${finput.value}`)
+               .then(async (res) =>{
+                   const data = await res.json();
+                   console.log(data);
+                   let ob = data.country;
+                   wrapperELe.innerHTML="";
+                   for(let i of ob){
+                        wrapperELe.innerHTML +=`
+                        <div class="content" id="wrapper">
+                            <div class="sub-content">
+                                <div id="country_id">${i.country_id}</div>
+                                <div id="probability">${i.probability*100}%</div>
+                            </div>
+                        </div>`
+                   }
+               }).catch((err) =>{
+                   console.log(err);
+               }).finally(() =>{
+                   loadingText.hidden = true;
+               })
+       }
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+body {
+    font-family: "Lucida Console", monospace;
+  }
+  .container {
+    width: 80%;
+    min-height: 600px;
+    padding: 15px;
+    margin: auto;
+    border: 1px solid grey;
+  }
+  h2 {
+    margin: auto;
+  }
+  /* --- Menu --- */
+  ul.menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+  }
+  li {
+    padding: 0px 16px;
+    text-decoration: none;
+  }
+  li.active {
+    text-decoration: underline;
+    color: #2b78e4;
+  }
+  /* --- Recipe Template --- */
+  .recipe {
+    text-align: left;
+    display: none;
+  }
+  .recipe img {
+    border: 1px solid black;
+    padding: 10px;
+    width: 250px;
+  }
+  p{
+    font-size: 0.8rem;
+  }
+  .image{
+    width: 20px;
+    height: 20px;
+  }
+  .wrapper{
+    display: flex;
+  }
+  .right{
+    text-align: right;
+  }
+  button{
+    padding: 5px 20px 5px 20px;
+  }
+  /* --- The button --- */
+  #button-generate {
+    margin-top: 200px;
+    background-color: #009e0f;
+    color: white;
+    padding: 7px;
+  }

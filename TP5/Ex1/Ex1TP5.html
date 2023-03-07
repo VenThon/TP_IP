@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Activity Suggestion</title>
+    <style>
+        .wrapper{
+            width: 600px;
+            height: 600px;
+            border: 2px solid black;
+            background-color: aqua;
+        }
+        .emogy{
+            display: flex;
+            justify-content: center;
+            font-size: 70px;
+        }
+        h1{
+            display: flex;
+            justify-content: center;
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+        }
+        button{
+            width: 150px;
+            height: 50px;
+            border-radius: 5px;
+        }
+        .content{
+            display: flex;
+            justify-content: center;
+            padding-top: 40px;
+            height: 200px;
+
+        }
+        #activity-name{
+            display: flex;
+            justify-content: center;
+            color: black;
+            font-size: 20px;
+        }
+        #type{
+            padding-top: 30px;
+        }
+        #participants{
+            padding-top: 10px;
+        }
+        #price{
+            padding-top: 10px;
+        }
+        #link{
+            padding-top: 10px;
+        }
+        .sub-content{
+            background-color: whitesmoke;
+            width: 300px;
+            height: 200px;
+            padding: 20px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="emogy">
+            🤨
+        </div>
+        <h1>Are you boring?</h1>
+        <div class="btn">
+            <button onclick="getAnActivity()">Tell me what to do</button>
+        </div>
+        <div id="loading-text" hidden>
+            Loading....
+        </div>
+        <div class="content" id="content">
+            
+        </div>
+    </div>
+    <script src="./Sript.js"></script>
+    
+</body>
+</html>
